@@ -1,10 +1,13 @@
 PODS:
   - MBProgressHUD (0.8)
+  - QR-Code-Encoder-for-Objective-C (1.0.0)
 
 DEPENDENCIES:
   - MBProgressHUD (~> 0.8)
+  - QR-Code-Encoder-for-Objective-C
 
 SPEC CHECKSUMS:
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
+  QR-Code-Encoder-for-Objective-C: 0ba86b1cca7befb53538e551c055a660b50ca226
 
 COCOAPODS: 0.29.0

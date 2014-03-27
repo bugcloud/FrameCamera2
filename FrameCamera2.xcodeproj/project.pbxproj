@@ -35,7 +35,7 @@
 		DDD9BB4B18DB3AE800C1E66B /* btn-settion.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD9BB4918DB3AE800C1E66B /* btn-settion.png */; };
 		DDD9BB4C18DB3AE800C1E66B /* btn-settion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD9BB4A18DB3AE800C1E66B /* btn-settion@2x.png */; };
 		DDD9BB4F18DB3C1300C1E66B /* FRCSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD9BB4E18DB3C1300C1E66B /* FRCSettingViewController.m */; };
-		DDD9BB5318DB3C5D00C1E66B /* FRCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD9BB5218DB3C5D00C1E66B /* FRCViewController.m */; };
+		DDD9BB5318DB3C5D00C1E66B /* FRCViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDD9BB5218DB3C5D00C1E66B /* FRCViewController.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +80,7 @@
 		DDD9BB4D18DB3C1300C1E66B /* FRCSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRCSettingViewController.h; path = ViewController/FRCSettingViewController.h; sourceTree = "<group>"; };
 		DDD9BB4E18DB3C1300C1E66B /* FRCSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRCSettingViewController.m; path = ViewController/FRCSettingViewController.m; sourceTree = "<group>"; };
 		DDD9BB5118DB3C5D00C1E66B /* FRCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FRCViewController.h; path = ViewController/FRCViewController.h; sourceTree = "<group>"; };
-		DDD9BB5218DB3C5D00C1E66B /* FRCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FRCViewController.m; path = ViewController/FRCViewController.m; sourceTree = "<group>"; };
+		DDD9BB5218DB3C5D00C1E66B /* FRCViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FRCViewController.mm; path = ViewController/FRCViewController.mm; sourceTree = "<group>"; };
 		F966A56699054C7888C0C9FC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -213,7 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				DDD9BB5118DB3C5D00C1E66B /* FRCViewController.h */,
-				DDD9BB5218DB3C5D00C1E66B /* FRCViewController.m */,
+				DDD9BB5218DB3C5D00C1E66B /* FRCViewController.mm */,
 				DDD9BB4D18DB3C1300C1E66B /* FRCSettingViewController.h */,
 				DDD9BB4E18DB3C1300C1E66B /* FRCSettingViewController.m */,
 				DD5DD42318DB6B9C00C858E8 /* FRCImagePickerController.h */,
@@ -340,7 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDD9BB5318DB3C5D00C1E66B /* FRCViewController.m in Sources */,
+				DDD9BB5318DB3C5D00C1E66B /* FRCViewController.mm in Sources */,
 				DD5DD43018DEC85E00C858E8 /* FRCSettingHelper.m in Sources */,
 				DD5DD43718DED54100C858E8 /* FRCHorizontalImageView.m in Sources */,
 				DDD9BB4F18DB3C1300C1E66B /* FRCSettingViewController.m in Sources */,
