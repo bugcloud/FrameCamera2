@@ -14,7 +14,11 @@
         if ([key compare:kFRCKeyForUserNameSetting] == NSOrderedSame) {
             [defaults setObject:params[kFRCKeyForUserNameSetting] forKey:kFRCKeyForUserNameSetting];
         } else if ([key compare:kFRCKeyForDateVisibleSetting] == NSOrderedSame) {
-            [defaults setBool:[(NSNumber *)params[kFRCKeyForDateVisibleSetting] boolValue] forKey:kFRCKeyForDateVisibleSetting];
+            [defaults setBool:[(NSNumber *)params[kFRCKeyForDateVisibleSetting] boolValue]
+                       forKey:kFRCKeyForDateVisibleSetting];
+        } else if ([key compare:kFRCKeyForQREnableSetting] == NSOrderedSame) {
+            [defaults setBool:[(NSNumber *)params[kFRCKeyForQREnableSetting] boolValue]
+                       forKey:kFRCKeyForQREnableSetting];
         }
     }
     [defaults synchronize];
@@ -30,10 +34,16 @@
     return [[NSUserDefaults standardUserDefaults] boolForKey:kFRCKeyForDateVisibleSetting];
 }
 
++ (BOOL)showQR
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:kFRCKeyForQREnableSetting];
+}
+
 + (void)clear
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:kFRCKeyForDateVisibleSetting];
+    [defaults removeObjectForKey:kFRCKeyForQREnableSetting];
     [defaults removeObjectForKey:kFRCKeyForUserNameSetting];
     [defaults synchronize];
 }

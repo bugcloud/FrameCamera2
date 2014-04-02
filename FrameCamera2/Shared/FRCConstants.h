@@ -7,6 +7,7 @@
 
 extern NSString *const kFRCKeyForDateVisibleSetting;
 extern NSString *const kFRCKeyForUserNameSetting;
+extern NSString *const kFRCKeyForQREnableSetting;
 extern CGSize const kFRCPictureSizeInR4;
 
 @interface FRCConstants : NSObject

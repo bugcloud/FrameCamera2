@@ -18,9 +18,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         _valueForDateVisible = [FRCSettingHelper showDate];
-        if (!_valueForDateVisible) {
-            _valueForDateVisible = NO;
-        }
+        _valueForQREnable = [FRCSettingHelper showQR];
         _valueForUserName = [FRCSettingHelper userName];
     }
     return self;
@@ -30,6 +28,7 @@
 {
     [super viewDidLoad];
     [_switchForDateVisible setOn:_valueForDateVisible];
+    [_switchForQREnable setOn:_valueForQREnable];
     [_textFieldForName setText:_valueForUserName];
 }
 
@@ -60,7 +59,8 @@
         // Do asynchronous process
         NSDictionary *settings = @{
             kFRCKeyForUserNameSetting: _valueForUserName,
-            kFRCKeyForDateVisibleSetting: [NSNumber numberWithBool:_valueForDateVisible]
+            kFRCKeyForDateVisibleSetting: [NSNumber numberWithBool:_valueForDateVisible],
+            kFRCKeyForQREnableSetting: [NSNumber numberWithBool:_valueForQREnable]
         };
         [FRCSettingHelper saveSetting:settings];
 
@@ -95,7 +95,7 @@
                         [self showErrorDialog];
                     });
                 }
-                LOG(@"%@", jsonDict);
+                //LOG(@"%@", jsonDict);
                 NSMutableArray *resourceUrls = [NSMutableArray arrayWithCapacity:0];
                 for (NSDictionary *dict in jsonDict[@"frames"]) {
                     [resourceUrls addObject:dict[@"img_normal"]];
@@ -127,6 +127,7 @@
                 }
             }
         } else {
+            // usernameを入力していない場合は設定をクリアする
             [FRCSettingHelper clear];
         }
 
@@ -142,6 +143,11 @@
 - (IBAction)switchForDateVisibleHasChanged:(id)sender
 {
     _valueForDateVisible = [sender isOn];
+}
+
+- (IBAction)switchForQREnableHasChanged:(id)sender
+{
+    _valueForQREnable = [sender isOn];
 }
 
 - (void)showErrorDialog

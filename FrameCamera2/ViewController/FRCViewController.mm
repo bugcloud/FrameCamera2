@@ -76,23 +76,25 @@
                          NSForegroundColorAttributeName: [UIColor whiteColor]
                      }];
                 }
-                //add QR code of Image URL
-                //TODO make URL
-                NSString *imageUrl = @"http://gif.r4d-inc.net/uploads/09B8F947-8E8D-4A1E-B284-F76BAF18F160.gif";
-                DataMatrix *qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:imageUrl];
-                int qrDimention = 640;
-                UIImage *qrImage = [QREncoder renderDataMatrix:qrMatrix imageDimension:qrDimention];
-                //At first, draw white background and then draw QR code
-                CGContextRef context = UIGraphicsGetCurrentContext();
-                CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-                CGContextFillRect(context, CGRectMake(image.size.width - qrDimention - 140.0f,
-                                                      image.size.height - qrDimention - 140.0f,
-                                                      qrDimention + 80.0f,
-                                                      qrDimention + 80.0f));
-                [qrImage drawAtPoint:CGPointMake(
-                     image.size.width - qrDimention - 100.0f,
-                     image.size.height - qrDimention - 100.0f
-                     )];
+                if ([FRCSettingHelper showQR]) {
+                    //add QR code of Image URL
+                    //TODO make URL
+                    NSString *imageUrl = @"http://gif.r4d-inc.net/uploads/09B8F947-8E8D-4A1E-B284-F76BAF18F160.gif";
+                    DataMatrix *qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:imageUrl];
+                    int qrDimention = 640;
+                    UIImage *qrImage = [QREncoder renderDataMatrix:qrMatrix imageDimension:qrDimention];
+                    //At first, draw white background and then draw QR code
+                    CGContextRef context = UIGraphicsGetCurrentContext();
+                    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+                    CGContextFillRect(context, CGRectMake(image.size.width - qrDimention - 140.0f,
+                                                          image.size.height - qrDimention - 140.0f,
+                                                          qrDimention + 80.0f,
+                                                          qrDimention + 80.0f));
+                    [qrImage drawAtPoint:CGPointMake(
+                         image.size.width - qrDimention - 100.0f,
+                         image.size.height - qrDimention - 100.0f
+                         )];
+                }
 
                 UIImage *mergedImage = UIGraphicsGetImageFromCurrentImageContext();
                 UIGraphicsEndImageContext();

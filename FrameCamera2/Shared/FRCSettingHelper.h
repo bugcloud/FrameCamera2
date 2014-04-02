@@ -10,6 +10,7 @@
 + (void)saveSetting:(NSDictionary *)params;
 + (NSString *)userName;
 + (BOOL)showDate;
++ (BOOL)showQR;
 + (void)clear;
 
 @end
